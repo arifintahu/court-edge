@@ -9,6 +9,7 @@ import { appendResult } from "./trading/resultsLogger";
 import { computeWinProbability } from "./model/winProbability";
 import { logger } from "./logger";
 import { CanonClient } from "./canon/canonClient";
+import { initCanonWriter, writeState, pushFlowEvent } from "./canon/canonStateWriter";
 import type { GameState, RiskState } from "./types";
 
 const tracker = new PositionTracker();
@@ -75,6 +76,14 @@ async function processTick(): Promise<void> {
     const edge = detectEdge(wp, market, config.edgeThreshold);
     if (!edge.isActionable) continue;
 
+    const edgeTs = new Date().toISOString();
+    pushFlowEvent({
+      ts: edgeTs,
+      type: "edge_detected",
+      summary: "Edge detected: " + game.homeTeam + " vs " + game.awayTeam + " side=" + edge.side + " edge=" + edge.edge.toFixed(3),
+      data: { gameId: game.gameId, side: edge.side, edge: edge.edge, modelProb: edge.modelProb, marketProb: edge.marketProb },
+    });
+
     const bet = kellySize(edge, market, riskState, config.maxBetFraction, config.maxExposureFraction);
     if (bet.amount <= 0) continue;
 
@@ -122,6 +131,12 @@ async function processTick(): Promise<void> {
 
     if (order.status === "submitted" || order.status === "dry-run") {
       tracker.open(order, order.amount, order.price);
+      pushFlowEvent({
+        ts: order.timestamp,
+        type: "order_placed",
+        summary: "Order placed: " + game.homeTeam + " vs " + game.awayTeam + " side=" + order.side + " amount=$" + order.amount.toFixed(2),
+        data: order,
+      });
       appendResult(RESULTS_PATH, {
         timestamp: order.timestamp,
         gameId: game.gameId,
@@ -136,6 +151,23 @@ async function processTick(): Promise<void> {
   const summary = tracker.getSummary();
   logger.info("Tick done", summary as unknown as Record<string, unknown>);
 
+  writeState({
+    mode: SIMULATE ? "simulate" : DRY_RUN ? "dry-run" : "live",
+    status: "running",
+    bankroll: config.startingBankroll,
+    openPositions: tracker.getOpenCount(),
+    totalExposed: tracker.getTotalExposed(),
+    lastTick: new Date().toISOString(),
+    totalTrades: (summary as any).totalTrades ?? 0,
+    totalPnL: (summary as any).totalPnL ?? 0,
+  });
+  pushFlowEvent({
+    ts: new Date().toISOString(),
+    type: "tick",
+    summary: "tick complete",
+    data: summary,
+  });
+
   if (SIMULATE) {
     const simSummary = simTracker.getSummary();
     console.log("[SIMULATE] bankroll=$" + config.startingBankroll.toFixed(2)
@@ -149,6 +181,7 @@ async function processTick(): Promise<void> {
 async function main(): Promise<void> {
   const mode = SIMULATE ? "simulate" : DRY_RUN ? "dry-run" : "live";
   console.log("NBA Edge Bot starting | mode=" + mode + " | poll=" + config.pollIntervalSeconds + "s");
+  initCanonWriter(mode);
   if (SIMULATE) {
     simTracker.loadFromFile(SIM_POSITIONS_PATH);
     console.log("Simulate mode — trades logged to SIMULATE.md (no real orders placed)");
