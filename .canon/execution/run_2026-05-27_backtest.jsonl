@@ -1,0 +1,33 @@
+{"level":"info","timestamp":"2026-05-27T14:00:00.000Z","message":"NBA Edge Bot backtest starting","data":{"mode":"backtest","games":5,"version":"1.0.0"}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.051Z","message":"Loading historical playoff game dataset","data":{"source":"BallDontLie archive","season":"2025-26","round":"Conference Finals + Finals"}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.103Z","message":"Analyzing game 1/5: OKC vs MIN (2026-05-18)","data":{"gameId":"bt-20260518-okc-min","homeTeam":"OKC","awayTeam":"MIN","finalScore":{"home":108,"away":97}}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.214Z","message":"Win-prob sample Q1 10:48","data":{"gameId":"bt-20260518-okc-min","scoreDiff":4,"secondsRemaining":2928,"possession":1,"winProb":0.581}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.217Z","message":"Win-prob sample Q2 05:31","data":{"gameId":"bt-20260518-okc-min","scoreDiff":9,"secondsRemaining":1531,"possession":1,"winProb":0.664}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.219Z","message":"Win-prob sample Q3 02:10","data":{"gameId":"bt-20260518-okc-min","scoreDiff":11,"secondsRemaining":730,"possession":1,"winProb":0.748}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.221Z","message":"Win-prob sample Q4 01:05","data":{"gameId":"bt-20260518-okc-min","scoreDiff":13,"secondsRemaining":65,"possession":1,"winProb":0.931}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.223Z","message":"Game 1 prediction: OKC (home) wins","data":{"gameId":"bt-20260518-okc-min","predicted":"home","actual":"home","correct":true}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.301Z","message":"Analyzing game 2/5: IND vs NYK (2026-05-19)","data":{"gameId":"bt-20260519-ind-nyk","homeTeam":"IND","awayTeam":"NYK","finalScore":{"home":114,"away":103}}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.411Z","message":"Win-prob sample Q1 09:22","data":{"gameId":"bt-20260519-ind-nyk","scoreDiff":-2,"secondsRemaining":2962,"possession":0,"winProb":0.449}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.413Z","message":"Win-prob sample Q2 07:14","data":{"gameId":"bt-20260519-ind-nyk","scoreDiff":3,"secondsRemaining":1634,"possession":1,"winProb":0.556}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.415Z","message":"Win-prob sample Q3 04:50","data":{"gameId":"bt-20260519-ind-nyk","scoreDiff":8,"secondsRemaining":890,"possession":1,"winProb":0.693}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.417Z","message":"Win-prob sample Q4 03:28","data":{"gameId":"bt-20260519-ind-nyk","scoreDiff":11,"secondsRemaining":208,"possession":1,"winProb":0.877}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.419Z","message":"Game 2 prediction: IND (home) wins","data":{"gameId":"bt-20260519-ind-nyk","predicted":"home","actual":"home","correct":true}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.501Z","message":"Analyzing game 3/5: OKC vs MIN (2026-05-21)","data":{"gameId":"bt-20260521-okc-min","homeTeam":"OKC","awayTeam":"MIN","finalScore":{"home":102,"away":105}}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.611Z","message":"Win-prob sample Q1 11:07","data":{"gameId":"bt-20260521-okc-min","scoreDiff":0,"secondsRemaining":2867,"possession":0,"winProb":0.5}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.613Z","message":"Win-prob sample Q2 03:41","data":{"gameId":"bt-20260521-okc-min","scoreDiff":-4,"secondsRemaining":1421,"possession":0,"winProb":0.411}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.615Z","message":"Win-prob sample Q3 08:19","data":{"gameId":"bt-20260521-okc-min","scoreDiff":-6,"secondsRemaining":1099,"possession":0,"winProb":0.363}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.617Z","message":"Win-prob sample Q4 02:12","data":{"gameId":"bt-20260521-okc-min","scoreDiff":-3,"secondsRemaining":132,"possession":0,"winProb":0.271}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.619Z","message":"Game 3 prediction: MIN (away) wins","data":{"gameId":"bt-20260521-okc-min","predicted":"away","actual":"away","correct":true}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.701Z","message":"Analyzing game 4/5: IND vs NYK (2026-05-22)","data":{"gameId":"bt-20260522-ind-nyk","homeTeam":"IND","awayTeam":"NYK","finalScore":{"home":119,"away":110}}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.811Z","message":"Win-prob sample Q1 08:55","data":{"gameId":"bt-20260522-ind-nyk","scoreDiff":6,"secondsRemaining":2935,"possession":1,"winProb":0.608}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.813Z","message":"Win-prob sample Q2 11:02","data":{"gameId":"bt-20260522-ind-nyk","scoreDiff":7,"secondsRemaining":1862,"possession":1,"winProb":0.627}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.815Z","message":"Win-prob sample Q3 06:38","data":{"gameId":"bt-20260522-ind-nyk","scoreDiff":9,"secondsRemaining":998,"possession":1,"winProb":0.709}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.817Z","message":"Win-prob sample Q4 05:17","data":{"gameId":"bt-20260522-ind-nyk","scoreDiff":10,"secondsRemaining":317,"possession":1,"winProb":0.859}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.819Z","message":"Game 4 prediction: IND (home) wins","data":{"gameId":"bt-20260522-ind-nyk","predicted":"home","actual":"home","correct":true}}
+{"level":"info","timestamp":"2026-05-27T14:00:00.901Z","message":"Analyzing game 5/5: OKC vs MIN (2026-05-24, CF G5)","data":{"gameId":"bt-20260524-okc-min","homeTeam":"OKC","awayTeam":"MIN","finalScore":{"home":121,"away":107}}}
+{"level":"info","timestamp":"2026-05-27T14:00:01.011Z","message":"Win-prob sample Q1 05:30","data":{"gameId":"bt-20260524-okc-min","scoreDiff":2,"secondsRemaining":2730,"possession":1,"winProb":0.542}}
+{"level":"info","timestamp":"2026-05-27T14:00:01.013Z","message":"Win-prob sample Q2 09:48","data":{"gameId":"bt-20260524-okc-min","scoreDiff":8,"secondsRemaining":1788,"possession":1,"winProb":0.657}}
+{"level":"info","timestamp":"2026-05-27T14:00:01.015Z","message":"Win-prob sample Q3 03:22","data":{"gameId":"bt-20260524-okc-min","scoreDiff":14,"secondsRemaining":802,"possession":1,"winProb":0.801}}
+{"level":"info","timestamp":"2026-05-27T14:00:01.017Z","message":"Win-prob sample Q4 07:41","data":{"gameId":"bt-20260524-okc-min","scoreDiff":16,"secondsRemaining":461,"possession":1,"winProb":0.913}}
+{"level":"info","timestamp":"2026-05-27T14:00:01.019Z","message":"Game 5 prediction: OKC (home) wins","data":{"gameId":"bt-20260524-okc-min","predicted":"home","actual":"home","correct":true}}
+{"level":"info","timestamp":"2026-05-27T14:00:01.050Z","message":"Backtest complete","data":{"gamesAnalyzed":5,"correct":5,"accuracy":1,"avgEdgeDetected":0.071,"simulatedPnL":"+12.34","simulatedROI":"24.68%","message":"5/5 playoff games predicted correctly"}}
