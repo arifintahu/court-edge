@@ -1,5 +1,5 @@
 {
-  "name": "nba-edge-bot",
+  "name": "court-edge",
   "version": "1.0.0",
   "description": "NBA playoffs win-probability edge bot for DEGA hackathon — fetches live game state, computes win prob, detects market edges, and places orders via Canon CLI.",
   "main": "dist/index.js",

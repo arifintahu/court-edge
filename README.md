@@ -44,8 +44,8 @@ See [docs/architecture.md](docs/architecture.md) for the full module map.
 ## Quick Start
 
 ```bash
-git clone https://github.com/arifintahu/nba-edge-bot
-cd nba-edge-bot
+git clone https://github.com/arifintahu/court-edge
+cd court-edge
 npm install
 cp .env.example .env
 # Edit .env — set BALLDONTLIE_API_KEY, DRY_RUN=true for testing
