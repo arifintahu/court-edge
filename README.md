@@ -1,4 +1,8 @@
-# nba-edge-bot
+<p align="center">
+  <img src="logo.svg" alt="CourtEdge" width="480"/>
+</p>
+
+# CourtEdge
 
 Speed-based NBA playoff prediction market bot for the **DEGA NBA Playoffs Hackathon** on DoraHacks.
 
